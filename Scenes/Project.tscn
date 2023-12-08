@@ -1,9 +1,9 @@
 [gd_scene load_steps=29 format=3 uid="uid://dyxme6vrui2lu"]
 
-[ext_resource type="PackedScene" uid="uid://tw7rmqomxa3m" path="res://Blender/map.blend" id="1_1xp2t"]
-[ext_resource type="Script" path="res://Scripts/Slug.gd" id="2_pfmby"]
-[ext_resource type="Script" path="res://Scripts/SlugArea.gd" id="3_53isk"]
-[ext_resource type="Script" path="res://Scripts/Austronaut.gd" id="4_jctnj"]
+[ext_resource type="Script" path="res://Scripts/Slug.gd" id="1_2uvp4"]
+[ext_resource type="Script" path="res://Scripts/SlugArea.gd" id="2_opaej"]
+[ext_resource type="Script" path="res://Scripts/Austronaut.gd" id="3_qmqnp"]
+[ext_resource type="PackedScene" uid="uid://tw7rmqomxa3m" path="res://Blender/map.blend" id="4_4ewjh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x57a2"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -445,7 +445,7 @@ libraries = {
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2.095, 0, 0, 0, 1, -0.944881, 2.40418, -22.9253)
-script = ExtResource("2_pfmby")
+script = ExtResource("1_2uvp4")
 
 [node name="Slug" type="MeshInstance3D" parent="CharacterBody3D"]
 transform = Transform3D(-0.9996, -3.7238e-09, -0.0282881, -3.72529e-09, 1, -1.19209e-07, 0.0282881, 1.05381e-10, -0.9996, -0.0302571, 2.15849, 5.23694)
@@ -460,7 +460,7 @@ shape = SubResource("CapsuleShape3D_2hch0")
 
 [node name="Area3D" type="Area3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.477327, 0, 0, 0, 1, 0.944881, 4.98507, 22.9253)
-script = ExtResource("3_53isk")
+script = ExtResource("2_opaej")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07439, -5.91934, -18.0983)
@@ -468,7 +468,7 @@ shape = SubResource("BoxShape3D_m4mu6")
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6097, 7.34684, -4.68316)
-script = ExtResource("4_jctnj")
+script = ExtResource("3_qmqnp")
 
 [node name="Austro" type="MeshInstance3D" parent="Player"]
 transform = Transform3D(0.0123233, 0, -0.195581, 0, 0.608359, 0, 0.179289, 0, 0.0134432, 0.34178, -1.38714, -0.00550461)
@@ -487,7 +487,7 @@ transform = Transform3D(-0.99519, 0, -0.0979651, 0, 1, 0, 0.0979651, 0, -0.99519
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_h10w7")
 
-[node name="map" parent="NavigationRegion3D" instance=ExtResource("1_1xp2t")]
+[node name="map" parent="NavigationRegion3D" instance=ExtResource("4_4ewjh")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.01686, 0, -0.969265)
 
 [node name="Marker3D" type="Marker3D" parent="."]
